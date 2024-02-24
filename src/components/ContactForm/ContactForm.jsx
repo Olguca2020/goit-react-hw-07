@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addCard } from "../../redux/operation";
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export const ContactForm = () => {
       number: values.number,
     };
 
-    dispatch(addContact(newContact));
+    dispatch(addCard(newContact));
     actions.resetForm();
   };
   const initialValues = { id: "", name: "", number: "" };

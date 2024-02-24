@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCards } from "./operation";
+import { fetchCards, addCard } from "./operation";
 
 const initialState = {
   items: [],
@@ -18,9 +18,21 @@ export const contactsSlice = createSlice({
       })
       .addCase(fetchCards.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.items.push(action.payload);
       })
       .addCase(fetchCards.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(addCard.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(addCard.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload;
+      })
+      .addCase(addCard.rejected, (state) => {
         state.loading = false;
         state.error = true;
       }),
