@@ -27,3 +27,15 @@ export const addCard = createAsyncThunk(
     }
   }
 );
+
+export const deleteCard = createAsyncThunk(
+  "cards/deleteCard",
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.delete(`contacts/${id}`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

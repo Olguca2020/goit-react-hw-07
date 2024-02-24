@@ -2,15 +2,16 @@ import { useId } from "react";
 import css from "./SearchBox.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { checkFilter } from "../../redux/filtersSlice";
+import { selectStatusFilter } from "../../redux/selectors";
 
 export const SearchBox = () => {
   const id = useId();
-  const filter = useSelector((state) => state.filters.name);
+  const filter = useSelector(selectStatusFilter);
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
     const { value } = event.target;
-
+    console.log(value);
     dispatch(checkFilter(value));
   };
   return (
