@@ -60,7 +60,9 @@ export const ContactForm = () => {
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={css.addBtn}>
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

@@ -14,7 +14,7 @@ export const Contact = ({ name, number, onButtonClick }) => {
           {number}
         </p>
       </div>
-      <button type="button" onClick={onButtonClick}>
+      <button type="button" onClick={onButtonClick} className={css.deleteBtn}>
         Delete
       </button>
     </div>

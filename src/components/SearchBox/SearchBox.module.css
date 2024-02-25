@@ -1,15 +1,21 @@
-.inputFeald {
+label {
   display: block;
-  width: 340px;
-  margin-left: 0;
-  margin-right: auto;
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 
-.inputFeald:focus {
-  border: 2px solid #007bff;
-  outline: none;
+.inputField {
+  width: 327px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-label {
-  text-align: start;
-  display: block;
+
+.inputField:focus,
+.inputField:hover {
+  outline: none;
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.8);
 }

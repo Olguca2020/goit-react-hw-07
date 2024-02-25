@@ -19,7 +19,7 @@ export const SearchBox = () => {
       <label htmlFor={id}>Finde contacts by name</label>
       <input
         id={id}
-        className={css.inputFeald}
+        className={css.inputField}
         value={filter}
         type="text"
         onChange={handleChange}
